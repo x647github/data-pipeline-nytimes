@@ -14,8 +14,8 @@ The cleaned datasets are loaded into a PostgreSQL database using the ETL DAGs.
 
 ## Project Structure
 - `dags/`: Contains the Airflow DAGs that orchestrate the ETL process.
-  - `nyt_articles_etl.py`: DAG for extracting, cleaning, and loading New York Times articles.
-  - `nyt_bestsellers_etl.py`: DAG for extracting, cleaning, and loading the New York Times hardcover fiction bestseller list.
+  - `etl_nyt_articles.py`: DAG for extracting, cleaning, and loading New York Times articles.
+  - `etl_nyt_bestsellers.py`: DAG for extracting, cleaning, and loading the New York Times hardcover fiction bestseller list.
 
 - `extract_python_scripts/`: Contains the Python scripts used for the extraction process.
   - `extract_nyt_articles.py`: Script to extract New York Times articles for the current month using the New York Times API.
