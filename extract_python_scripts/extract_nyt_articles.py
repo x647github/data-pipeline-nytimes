@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+import os
 from datetime import date
 import requests
 import json 
@@ -5,7 +7,9 @@ import json
 
 current_day = date.today()
 year, month = current_day.year, current_day.month
-api_key = 'fItY1aFCge0vQZRKKdh5tIthyGfTdhLb'
+
+load_dotenv()
+api_key = os.getenv('API_KEY')
 
 def extract():
     response = requests.get(f'https://api.nytimes.com/svc/archive/v1/{year}/{month}.json?api-key={api_key}')
