@@ -3,6 +3,8 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
 
+from dotenv import load_dotenv
+import os
 import json
 import pandas as pd
 import sqlalchemy as db
@@ -18,8 +20,8 @@ def transform_func(ti):
     
     return data
 
-
-password = 'EwZxzdJKiGivXHkt'
+load_dotenv()
+password = os.getenv('PASSWORD')
 engine = db.create_engine(f'postgresql://postgres.qhuhevlwiyybwidxuihs:{password}@aws-0-us-west-1.pooler.supabase.com:6543/postgres'.format(password))
 
 
