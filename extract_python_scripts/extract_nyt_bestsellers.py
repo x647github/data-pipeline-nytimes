@@ -1,8 +1,11 @@
+from dotenv import load_dotenv
+import os
 import requests
 import json 
 
 
-api_key = 'fItY1aFCge0vQZRKKdh5tIthyGfTdhLb'
+load_dotenv()
+api_key = os.getenv('API_KEY')
 
 
 def extract():
